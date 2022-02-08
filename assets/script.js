@@ -14,10 +14,15 @@ const credit = document.querySelector('#credit')
 // selecting the element with an id of add-gb
 const gbAddBtn = document.querySelector('#add-gb')
 let gbMinusBtn = document.querySelector('#minus-gb')
+let ccAddBtn = document.querySelector('#add-cc')
+let ccMinusBtn = document.querySelector('#minus-cc')
+let sugarAddBtn = document.querySelector('#add-sugar')
+let sugarMinusBtn = document.querySelector('#minus-sugar')
 let gbQty = document.querySelector('#qty-gb')
 let ccQty = document.querySelector('#qty-cc')
 let sugarQty = document.querySelector('#qty-sugar')
 let cookieTotal = document.querySelector('#qty-total')
+
 
 // Code to update name display
 credit.textContent = `Created by ${yourName}`
@@ -25,14 +30,46 @@ credit.textContent = `Created by ${yourName}`
 // Event listener for clicks on the "+" button for Gingerbread cookies
 gbAddBtn.addEventListener('click', function(e) {
     gb++
+    updateTotal()
     gbQty.textContent=`${gb}`
 })    
 
 gbMinusBtn.addEventListener('click',function(e) {
     gb--
+    updateTotal()
     gbQty.textContent=`${gb}`
 })
 
+ccAddBtn.addEventListener('click', function(e) {
+    cc++
+    updateTotal()
+    ccQty.textContent=`${cc}`
+})    
+
+ccMinusBtn.addEventListener('click',function(e) {
+    cc--
+    updateTotal()
+    ccQty.textContent=`${cc}`
+})
+
+sugarAddBtn.addEventListener('click', function(e) {
+    sugar++
+    updateTotal()
+    sugarQty.textContent=`${sugar}`
+})    
+
+sugarMinusBtn.addEventListener('click',function(e) {
+    sugar--
+    updateTotal()
+    sugarQty.textContent=`${sugar}`
+})    
+
+function updateTotal (){
+    let total = gb+cc+sugar
+console.log(total)
+cookieTotal.textContent = total 
+}
+ 
 
 
 
@@ -41,15 +78,7 @@ gbMinusBtn.addEventListener('click',function(e) {
 
 
 
-
-// TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
 
 // TODO: Hook up event listeners for the rest of the buttons
 
 
-// let gbAddBtn = document.querySelector('#add-gb')
-// let gbMinusBtn = document.querySelector('#minus-gb')
-// let ccAddBtn = document.querySelector('#add-cc')
-// let ccMinusBtn = document.querySelector('#minus-cc')
-// let sugarAddBtn = document.querySelector('#add-sugar')
-// let sugarMinusBtn = document.querySelector('#minus-sugar')
